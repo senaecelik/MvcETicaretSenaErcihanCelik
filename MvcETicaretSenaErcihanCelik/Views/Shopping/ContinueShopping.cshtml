@@ -1,0 +1,80 @@
+﻿@model MvcETicaretSenaErcihanCelik.Models.Customer
+@{
+    ViewBag.Title = "ContinueShopping";
+}
+
+<div class="container">
+    <div class="row" style="margin-top:50px;">
+        <h2>Adres Bilgileri</h2>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                @using (Html.BeginForm("CompleteShopping", "Shopping", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label>Ad: </label>
+                        </div>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label>Soyad: </label>
+                        </div>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label>e-mail: </label>
+                        </div>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label>Cep Telefonu: </label>
+                        </div>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.Mobile1, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label>Adres: </label>
+                        </div>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(x => x.Address1, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label>Şehir: </label>
+                        </div>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label>Posta Kodu: </label>
+                        </div>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-2">
+                            <input type="submit" value="Alışverişi Tamamla" class="btn btn-primary form-control" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,33 @@
+﻿@model IEnumerable <MvcETicaretSenaErcihanCelik.Models.Product>
+@{
+    ViewBag.Title = "Ürünler";
+}
+
+<div class="container">
+    <div class="row" style="margin-top:50px;">
+        @{
+            foreach (var item in Model)
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src="@Url.Content(item.ImageUrl)" alt="@Url.Content(item.AltText)" />
+
+                        <div class="caption">
+                            <div style="height:75px;">
+                                <h4>@item.ProductName - @string.Format("{0:C2}", item.UnitPrice)</h4>
+                            </div>
+                            <div style="height:100px; overflow:auto;">
+                                <p>
+                                    @item.ShortDescription
+                                </p>
+                            </div>
+                            <div style="margin-top:10px;">
+                                <a href="@Url.Action("ProductDetail", new { id = item.ProductID })" class="btn btn-primary center-block" role="button">Ürün Detayı</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

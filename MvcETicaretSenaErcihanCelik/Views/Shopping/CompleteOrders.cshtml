@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MvcETicaretSenaErcihanCelik.Models.PaymentType>
+@{
+    ViewBag.Title = "Ödeme Seçenekleri";
+}
+
+<div class="container">
+    <div class="row" style="margin:50px;">
+        <h2>Ödeme Seçenekleri:<br /></h2>
+
+            @using (Html.BeginForm("ContinueShopping", "Shopping", FormMethod.Post))
+            {
+                foreach (var item in Model)
+                {
+                    <label>
+                        <input type="radio" name="PaymentType" value="@item.PaymentTypeID" checked="checked" />
+                        @item.TypeName
+                    </label>
+                    <br />
+                }
+                <hr />
+                <input type="submit" value="Devam Et" class="btn btn-primary" />
+            }
+
+    </div>
+</div>
